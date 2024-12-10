@@ -13,7 +13,12 @@ jobs:
           node-version: 20.15
       - name: check node version
         run: node -v
-        
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run the tests
+        run: yarn test
+            
+
 
             
 

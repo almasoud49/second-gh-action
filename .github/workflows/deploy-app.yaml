@@ -17,7 +17,25 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Run the tests
         run: yarn test
-            
+  build-code:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: install node-js
+        uses: actions/setup-node@v4  
+        with:
+          node-version: 20.15
+
+      - name: copying the code
+        uses: actions/checkout@v4  
+
+      - name: check node version
+        run: node -v
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build the code
+        run: yarn build           
 
 
             
